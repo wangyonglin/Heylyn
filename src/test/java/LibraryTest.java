@@ -14,7 +14,7 @@ public class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
     }
-    /*
+    
     @Test public void Heylyn() {
     	HttpUtil.request("https://www.baidu.com/", new OnResultCallback() {
 
@@ -29,5 +29,5 @@ public class LibraryTest {
 				// TODO Auto-generated method stub
 				System.out.println(e.getMessage().toString());
 			}});
-    }*/
+    }
 }

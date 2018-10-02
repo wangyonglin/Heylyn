@@ -37,7 +37,7 @@ public class HttpUtil {
 	                }
 
 			}});
-		thread.run();
+		thread.start();
 	}
 	
 	
