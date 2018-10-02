@@ -24,7 +24,7 @@ public class HttpUtil {
 	                            .url(url)
 	                            .build();
 	                    Response response = null;
-	                    response = client.newCall(request).execute();//得到Response 对象
+	                    response = client.newCall(request).execute();
 	                    if (response.isSuccessful()) {
 	                        String str = (String)response.body().string();
 	                        callback.success(str, "loading reuqest success");
