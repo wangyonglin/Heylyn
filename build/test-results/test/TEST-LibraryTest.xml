@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-02T08:48:06" hostname="2011-20180616RB" time="0.005">
+<testsuite name="LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-03T09:47:02" hostname="2011-20180616RB" time="0.737">
   <properties/>
-  <testcase name="Heylyn" classname="LibraryTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="Heylyn" classname="LibraryTest" time="0.737"/>
+  <system-out><![CDATA[okhttp3.internal.http.RealResponseBody@53d96008 200
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

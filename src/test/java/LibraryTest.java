@@ -4,8 +4,10 @@
 import org.junit.Test;
 
 import com.heylyn.exception.ResultException;
-import com.heylyn.network.HttpUtil;
-import com.heylyn.result.OnResultCallback;
+import com.heylyn.network.HttpClient;
+import com.heylyn.network.ResultResponse;
+import com.heylyn.network.ResultResponseCallback;
+
 
 import static org.junit.Assert.*;
 
@@ -16,18 +18,19 @@ public class LibraryTest {
     }
     
     @Test public void Heylyn() {
-    	HttpUtil.request("https://www.baidu.com/", new OnResultCallback() {
+    	HttpClient.get("https://www.baidu.com/", new ResultResponseCallback() {
 
 			@Override
-			public void success(Object obj, String msg) {
+			public void success(ResultResponse res, String msg) {
 				// TODO Auto-generated method stub
-				System.out.println(obj.toString());
+				System.out.println(res.body.toString()+" "+res.code.toString());
+				System.out.println(msg);
 			}
 
 			@Override
 			public void failure(ResultException e) {
 				// TODO Auto-generated method stub
-				System.out.println(e.getMessage().toString());
+				
 			}});
     }
 }
