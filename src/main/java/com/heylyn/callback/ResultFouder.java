@@ -1,6 +1,6 @@
-package com.heylyn.os;
+package com.heylyn.callback;
 
-public interface AuthorityCallback<T>{
+public interface ResultFouder<T>{
 	public void success(T t);
 	public void failure(RuntimeException e);
 }

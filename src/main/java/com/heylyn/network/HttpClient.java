@@ -12,7 +12,7 @@ import okhttp3.Response;
 
 
 public class HttpClient{
-	public static void byteStream(String url,ResultCallback<InputStream> callback) {
+	public static void urlResultInputStream(String url,ResultCallback<InputStream> callback) {
 
 		 FutureTask<InputStream> task = new FutureTask<InputStream>(new Callable<InputStream>() {
 
@@ -54,7 +54,7 @@ public class HttpClient{
 	       
 	    
 	}
-	public static void getString(String url,ResultCallback<String> callback) {
+	public static void urlResultString(String url,ResultCallback<String> callback) {
 
 		 FutureTask<String> task = new FutureTask<String>(new Callable<String>() {
 
@@ -96,46 +96,5 @@ public class HttpClient{
 	       
 	    
 	}
-	public static void get(String url,ResultResponseCallback callback) {
-
-		 FutureTask<ResultResponse> task = new FutureTask<ResultResponse>(new Callable<ResultResponse>() {
-
-			@Override
-			public ResultResponse call() throws Exception {
-				// TODO Auto-generated method stub
-				ResultResponse resultResponse = new ResultResponse();
-                try {
-                    OkHttpClient client = new OkHttpClient();
-                    Request request = new Request.Builder()
-                            .url(url)
-                            .build();
-                    Response response = null;
-                    response = client.newCall(request).execute();
-                    if (response.isSuccessful()) {
-                        resultResponse.body=(String) response.body().string();
-                        resultResponse.code=response.code();
-                    }else {
-                    	callback.failure(new ResultException("network request error: "+ response.code()));
-                    }
-                } catch (IOException e) {
-                    System.out.println(e.getStackTrace());
-
-                } catch (Exception e) {
-                    System.out.println(e.getStackTrace());
-
-                }
-                return resultResponse;
-			}});
-	        new Thread(task).start();
-	      
-	        try {
-	              callback.success(task.get(),"network request ok");
-	        } catch (InterruptedException e) {
-	            e.printStackTrace();
-	        } catch (ExecutionException e) {
-	            e.printStackTrace();
-	        }
-	       
-	    
-	}
+	
 }
