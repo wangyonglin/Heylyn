@@ -11,7 +11,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-public class HttpClient{
+public class HttpClient extends HttpClientEx{
 	public static void urlResultInputStream(String url,ResultCallback<InputStream> callback) {
 
 		 FutureTask<InputStream> task = new FutureTask<InputStream>(new Callable<InputStream>() {
