@@ -9,10 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class Container<T>  {
 	private List<T> list = new ArrayList<T>();
 	private 	ObjectMapper  mapper  = new ObjectMapper ();
-	public Container() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
 	public void put(T obj){
 		if(obj!=null) {
 			 list.add(obj);
