@@ -3,9 +3,11 @@
  */
 import org.junit.Test;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.heylyn.exception.ResultException;
+import com.heylyn.jackson.JacksonUtil;
 import com.heylyn.network.HttpClient;
-
+import com.heylyn.network.ResultCallback;
 import com.heylyn.network.ResultResponse;
 import com.heylyn.network.ResultResponseCallback;
 import com.heylyn.network.download.DownloadUtil;
@@ -15,6 +17,8 @@ import okhttp3.OkHttpClient;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class LibraryTest {
@@ -26,29 +30,7 @@ public class LibraryTest {
     @Test public void Heylyn() {
 
     	System.out.println("Heylyn run ...");
-    	String uri="http://wangyonglin.oss-cn-shanghai.aliyuncs.com/videos/2018/%E8%A2%81%E5%A8%85%E7%BB%B4%20-%20%E8%AF%B4%E6%95%A3%E5%B0%B1%E6%95%A3.mp4";
-    	String parent="../";
-    	String child="aa.mp4";
-    	DownloadUtil.run(uri,parent,child,new ProgressCallback(){
-
-			@Override
-			public void success() {
-				// TODO Auto-generated method stub
-				System.out.println("下载完成");
-			}
-
-			@Override
-			public void failure(ResultException e) {
-				// TODO Auto-generated method stub
-				System.out.println(e.getMessage());
-			}
-
-			@Override
-			public void loading(int progress) {
-				// TODO Auto-generated method stub
-				System.out.println("下载中..."+progress);
-			}});
-    	
+   
     	
     	try {
    		 TimeUnit.DAYS.sleep(1);
